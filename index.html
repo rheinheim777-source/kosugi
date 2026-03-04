@@ -1,1 +1,1082 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="大人の女性のための、上質なアイラッシュサロン。自然で上品な仕上がり、自まつ毛を傷めない技術で、あなただけの美しさを引き出します。">
+    <title>Eclat Gracieux | 表参道のプレミアム・アイラッシュサロン</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           CSS Variables & Reset
+           ========================================================================== */
+        :root {
+            /* Light Theme Colors (Default) */
+            --color-bg: #FDFBF7; /* Pearl White */
+            --color-text-main: #333333; /* Soft Charcoal */
+            --color-text-light: #666666;
+            --color-accent: #D4AF37; /* Champagne Gold */
+            --color-accent-light: #F4E8C1;
+            --color-surface: #FFFFFF;
+            --color-rose: #DDA7A5; /* Muted Rose */
+            --color-border: rgba(0,0,0,0.1);
+            --header-bg: rgba(253, 251, 247, 0.95);
+            --hero-bg: rgba(253, 251, 247, 0.85);
+            /* Typography */
+            --font-ja: 'Shippori Mincho', serif;
+            --font-en: 'Playfair Display', serif;
+            --font-ui: 'Inter', sans-serif;
+            /* Spacing */
+            --sp-xs: 0.5rem;
+            --sp-sm: 1rem;
+            --sp-md: 2rem;
+            --sp-lg: 4rem;
+            --sp-xl: 6rem;
+            /* Transitions */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --trans-default: 0.4s var(--ease-out-expo);
+        }
+        /* Dark Theme Colors */
+        [data-theme="dark"] {
+            --color-bg: #121212; /* Deep Charcoal */
+            --color-text-main: #E0E0E0; /* Soft White */
+            --color-text-light: #A0A0A0; /* Light Gray */
+            --color-accent: #E5C365; /* Brighter Champagne Gold for Dark Mode */
+            --color-accent-light: #5A4A1C; /* Darker Gold variant */
+            --color-surface: #1E1E1E; /* Slightly lighter than BG */
+            --color-rose: #B87C7A; /* Darker Rose */
+            --color-border: rgba(255,255,255,0.1);
+            --header-bg: rgba(18, 18, 18, 0.95);
+            --hero-bg: rgba(18, 18, 18, 0.85);
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-ja);
+            color: var(--color-text-main);
+            background-color: var(--color-bg);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color var(--trans-default), color var(--trans-default);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        /* ==========================================================================
+           Typography & Utilities
+           ========================================================================== */
+        .text-center { text-align: center; }
+        .mt-sm { margin-top: var(--sp-sm); }
+        .mt-md { margin-top: var(--sp-md); }
+        .mt-lg { margin-top: var(--sp-lg); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .container-fluid {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: var(--sp-xl) 0;
+        }
+        .section-header {
+            margin-bottom: var(--sp-lg);
+        }
+        .section-subtitle {
+            display: block;
+            font-family: var(--font-en);
+            font-size: 1rem;
+            color: var(--color-accent);
+            margin-bottom: var(--sp-xs);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+        }
+        /* ==========================================================================
+           Buttons
+           ========================================================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 3rem;
+            font-family: var(--font-ja);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: var(--trans-default);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .btn--primary {
+            background-color: var(--color-text-main);
+            color: var(--color-bg);
+        }
+        .btn--primary:hover {
+            background-color: var(--color-accent);
+            color: #121212; /* Fixed color on hover for contrast */
+        }
+        .btn--outline {
+            background-color: transparent;
+            border-color: var(--color-text-main);
+            color: var(--color-text-main);
+        }
+        .btn--outline:hover {
+            background-color: var(--color-text-main);
+            color: var(--color-bg);
+        }
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--trans-default);
+            color: var(--color-text-main);
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--color-surface);
+        }
+        
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: var(--trans-default);
+        }
+        .icon-moon { display: block; }
+        .icon-sun { display: none; }
+        
+        [data-theme="dark"] .icon-moon { display: none; }
+        [data-theme="dark"] .icon-sun { display: block; }
+        /* ==========================================================================
+           Header
+           ========================================================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            transition: var(--trans-default);
+            background: transparent;
+            padding: 1.5rem 0;
+        }
+        .header.is-scrolled {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        [data-theme="dark"] .header.is-scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo__en {
+            font-family: var(--font-en);
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        .logo__ja {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--color-text-light);
+        }
+        .nav__list {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .nav__item a {
+            font-family: var(--font-en);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav__item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-accent);
+            transition: var(--trans-default);
+        }
+        .nav__item a:hover::after {
+            width: 100%;
+        }
+        /* Mobile Nav Toggle */
+        .nav-toggle {
+            display: none;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-text-main);
+            position: absolute;
+            left: 0;
+            transition: var(--trans-default);
+        }
+        .nav-toggle span:nth-child(1) { top: 0; }
+        .nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .nav-toggle span:nth-child(3) { bottom: 0; }
+        .nav-toggle.is-active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+        .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.is-active span:nth-child(3) { bottom: auto; top: 50%; transform: translateY(-50%) rotate(-45deg); }
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--trans-default);
+            z-index: 100;
+        }
+        .mobile-menu.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-menu__list {
+            text-align: center;
+        }
+        .mobile-menu__list li {
+            margin-bottom: 2rem;
+        }
+        .mobile-menu__list a {
+            font-family: var(--font-en);
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+        /* Mix theme toggle inside mobile menu for mobile view */
+        .mobile-theme-toggle {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+        /* ==========================================================================
+           Hero
+           ========================================================================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+            overflow: hidden;
+        }
+        .hero__bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 65%;
+            height: 100%;
+            z-index: -1;
+        }
+        .hero__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.95);
+            animation: zoomOut 10s ease-out forwards;
+        }
+        [data-theme="dark"] .hero__image {
+            filter: brightness(0.6) contrast(1.1); /* Darken image more in dark mode */
+        }
+        .hero__content {
+            max-width: 600px;
+            background: var(--hero-bg);
+            padding: 4rem 3rem;
+            backdrop-filter: blur(10px);
+            transition: background-color var(--trans-default);
+        }
+        .hero__title {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+        .hero__title-en {
+            font-family: var(--font-en);
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--color-accent);
+        }
+        .hero__title-ja {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            letter-spacing: 0.2em;
+        }
+        .hero__text {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            line-height: 2;
+            color: var(--color-text-light);
+        }
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: var(--font-en);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+        }
+        .scroll-indicator::after {
+            content: '';
+            width: 1px;
+            height: 60px;
+            background-color: var(--color-text-main);
+            margin-top: 10px;
+            animation: scrollLine 2s infinite cubic-bezier(0.77, 0, 0.175, 1);
+            transform-origin: top;
+        }
+        @keyframes scrollLine {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            50.1% { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+        @keyframes zoomOut {
+            from { transform: scale(1.1); }
+            to { transform: scale(1); }
+        }
+        /* ==========================================================================
+           Concept
+           ========================================================================== */
+        .concept__inner {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+        .concept__text-wrapper {
+            flex: 1;
+        }
+        .concept__image-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        .concept__image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--color-accent);
+            z-index: -1;
+        }
+        .concept__image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+        [data-theme="dark"] .concept__image {
+            filter: brightness(0.8);
+        }
+        .concept__signature {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .concept__signature .en {
+            font-family: var(--font-en);
+            font-size: 0.9rem;
+            color: var(--color-accent);
+        }
+        .concept__signature .name {
+            font-family: var(--font-en);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        /* ==========================================================================
+           Reasons
+           ========================================================================== */
+        .reasons {
+            background-color: var(--color-surface);
+            transition: background-color var(--trans-default);
+        }
+        .reasons__grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .reason-card {
+            background: var(--color-bg);
+            padding: 3rem 2rem;
+            width: calc(33.333% - 1.5rem);
+            border-top: 3px solid var(--color-accent);
+            transition: var(--trans-default);
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+            border-right: 1px solid var(--color-border);
+            border-left: 1px solid var(--color-border);
+        }
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        [data-theme="dark"] .reason-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .reason-card__number {
+            font-family: var(--font-en);
+            font-size: 3rem;
+            color: var(--color-accent-light);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .reason-card__title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .reason-card__text {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+        /* ==========================================================================
+           Menu
+           ========================================================================== */
+        .menu__inner {
+            max-width: 800px;
+        }
+        .menu__category {
+            margin-bottom: 4rem;
+        }
+        .menu__category-title {
+            font-family: var(--font-en);
+            font-size: 2rem;
+            text-align: center;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+        .menu__category-desc {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+        }
+        .menu__list {
+            border-top: 1px solid var(--color-border);
+        }
+        .menu__item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .menu__item-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .menu__item-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+        .menu__item-price {
+            font-family: var(--font-en);
+            font-size: 1.2rem;
+            white-space: nowrap;
+            padding-left: 2rem;
+        }
+        /* ==========================================================================
+           Gallery
+           ========================================================================== */
+        .gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .gallery__item {
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/5;
+        }
+        .gallery__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        [data-theme="dark"] .gallery__img {
+            filter: brightness(0.85);
+        }
+        .gallery__item:hover .gallery__img {
+            transform: scale(1.05);
+        }
+        /* ==========================================================================
+           Footer
+           ========================================================================== */
+        .footer {
+            background-color: #1a1a1a; /* Always dark for footer */
+            color: white;
+            padding: 5rem 0 2rem;
+            transition: background-color var(--trans-default);
+        }
+        [data-theme="dark"] .footer {
+            background-color: #0d0d0d;
+        }
+        .footer__inner {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+        }
+        .footer__logo .logo__en {
+            color: white;
+        }
+        .footer__contact {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+        .footer__contact p {
+            margin-bottom: 1rem;
+        }
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: right;
+        }
+        .footer__links a {
+            font-family: var(--font-en);
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+        .footer__links a:hover {
+            color: var(--color-accent);
+        }
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+        .social-link {
+            font-family: var(--font-en);
+            font-size: 0.9rem;
+        }
+        .footer__bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+        /* ==========================================================================
+           Animations & Responsive
+           ========================================================================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .fade-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        @media (max-width: 991px) {
+            .nav { display: none; }
+            .nav-toggle { display: block; }
+            
+            .concept__inner {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .reason-card {
+                width: calc(50% - 1rem);
+            }
+        }
+        @media (max-width: 768px) {
+            .header__inner { padding-right: 15px; } /* Space for hamburger */
+            
+            .hero {
+                padding-left: 5%;
+                padding-top: 80px;
+            }
+            
+            .hero__bg {
+                width: 100%;
+                opacity: 0.7;
+            }
+            [data-theme="dark"] .hero__bg {
+                opacity: 0.4;
+            }
+            
+            .hero__content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .hero__title-en {
+                font-size: 2.5rem;
+            }
+            
+            .reason-card {
+                width: 100%;
+            }
+            
+            .gallery__grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu__item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .menu__item-price {
+                padding-left: 0;
+            }
+            
+            .footer__inner {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .footer__links, .social-links {
+                text-align: left;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header js-header">
+        <div class="header__inner">
+            <h1 class="logo">
+                <a href="#">
+                    <span class="logo__en">Eclat Gracieux</span>
+                    <span class="logo__ja">エクラ・グラシュー</span>
+                </a>
+            </h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#concept">Concept</a></li>
+                    <li class="nav__item"><a href="#reasons">Reasons</a></li>
+                    <li class="nav__item"><a href="#menu">Menu</a></li>
+                    <li class="nav__item"><a href="#gallery">Gallery</a></li>
+                    <li class="nav__item"><a href="#access">Access</a></li>
+                    <!-- Desktop Theme Toggle -->
+                    <li>
+                        <button class="theme-toggle js-theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
+                            <!-- Moon Icon for Light Mode -->
+                            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+                            </svg>
+                            <!-- Sun Icon for Dark Mode -->
+                            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 17a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM5.64 7.05a1 1 0 0 0 .7.29 1 1 0 0 0 .71-.29 1 1 0 0 0 0-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM18.36 16.95a1 1 0 0 0-.7-.29 1 1 0 0 0-.71.29 1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41-1.41zM3 12a1 1 0 0 0 1-1h2a1 1 0 0 0 0-2H4a1 1 0 0 0-1 1zm17-1h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1zm-1.64-3.95a1 1 0 0 0 1.41-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM5.64 16.95l-1.42 1.42a1 1 0 0 0 1.41 1.41l1.42-1.42a1 1 0 0 0-1.41-1.41z"/>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <button class="nav-toggle js-nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu js-mobile-menu">
+            <ul class="mobile-menu__list">
+                <li><a href="#concept" class="js-mobile-link">Concept</a></li>
+                <li><a href="#reasons" class="js-mobile-link">Reasons</a></li>
+                <li><a href="#menu" class="js-mobile-link">Menu</a></li>
+                <li><a href="#gallery" class="js-mobile-link">Gallery</a></li>
+                <li><a href="#access" class="js-mobile-link">Access</a></li>
+                <li class="mobile-theme-toggle">
+                    <button class="theme-toggle js-theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 17a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM5.64 7.05a1 1 0 0 0 .7.29 1 1 0 0 0 .71-.29 1 1 0 0 0 0-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM18.36 16.95a1 1 0 0 0-.7-.29 1 1 0 0 0-.71.29 1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41-1.41zM3 12a1 1 0 0 0 1-1h2a1 1 0 0 0 0-2H4a1 1 0 0 0-1 1zm17-1h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1zm-1.64-3.95a1 1 0 0 0 1.41-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM5.64 16.95l-1.42 1.42a1 1 0 0 0 1.41 1.41l1.42-1.42a1 1 0 0 0-1.41-1.41z"/></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__bg">
+            <img src="./images/hero_eyelash.png" alt="美しいまつ毛エクステ" class="hero__image">
+        </div>
+        <div class="hero__content">
+            <h2 class="hero__title fade-up">
+                <span class="hero__title-en">Natural & Elegant</span>
+                <span class="hero__title-ja">洗練された、大人の魅力を。</span>
+            </h2>
+            <p class="hero__text fade-up delay-1">
+                日常を忘れる上質なプライベート空間で、<br>
+                あなただけの癒しのひと時を。
+            </p>
+            <a href="#reservation" class="btn btn--primary fade-up delay-2">ご予約はこちら</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+        </div>
+    </section>
+    <!-- Concept Section -->
+    <section id="concept" class="section concept">
+        <div class="container concept__inner">
+            <div class="concept__text-wrapper fade-up">
+                <div class="section-header">
+                    <span class="section-subtitle">Concept</span>
+                    <h2 class="section-title">私らしさを、もっと愛せるように。</h2>
+                </div>
+                <p class="concept__text">
+                    「いかにも」なエクステではなく、まるで生まれつきのような自然で美しいまつ毛へ。<br><br>
+                    Eclat Gracieuxは、20代後半から60代の大人の女性に愛される、ワンランク上のアイラッシュサロンです。<br>
+                    骨格やお顔のバランスに合わせた「似合わせデザイン」と、自まつ毛の健康を第一に考えた「ダメージレス施術」で、あなたの魅力を最大限に引き出します。
+                </p>
+                <div class="concept__signature">
+                    <span class="en">Owner Eyelist</span>
+                    <span class="name">Yuko Sato</span>
+                </div>
+            </div>
+            <div class="concept__image-wrapper fade-up delay-1">
+                <img src="./images/salon_interior.png" alt="サロンの内装" class="concept__image img-parallax">
+            </div>
+        </div>
+    </section>
+    <!-- Reasons Section -->
+    <section id="reasons" class="section reasons">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <span class="section-subtitle">Why Choose Us</span>
+                <h2 class="section-title">当サロンが選ばれる5つの理由</h2>
+            </div>
+            <div class="reasons__grid">
+                <!-- Reason 1 -->
+                <div class="reason-card fade-up">
+                    <div class="reason-card__number">01</div>
+                    <h3 class="reason-card__title">自然で上品な仕上がり</h3>
+                    <p class="reason-card__text">
+                        ただ長く太くするのではなく、何種類ものエクステを緻密にブレンドし、どの角度から見ても美しい洗練された大人の目元を実現します。
+                    </p>
+                </div>
+                <!-- Reason 2 -->
+                <div class="reason-card fade-up delay-1">
+                    <div class="reason-card__number">02</div>
+                    <h3 class="reason-card__title">自まつ毛を徹底して守る技術</h3>
+                    <p class="reason-card__text">
+                        毎回まつ毛の健康状態を診断し、産毛や痛んだ毛を避けて装着。最高級の低刺激国産グルーを使用し、ダメージレスで長く楽しめるエクステをご提供します。
+                    </p>
+                </div>
+                <!-- Reason 3 -->
+                <div class="reason-card fade-up delay-2">
+                    <div class="reason-card__number">03</div>
+                    <h3 class="reason-card__title">不安を解消する丁寧なカウンセリング</h3>
+                    <p class="reason-card__text">
+                        初めての方や他店で失敗した方でも安心。理想のイメージ、目の形、お悩み、ライフスタイルまでしっかり把握し、あなたに最適なデザインをご提案します。
+                    </p>
+                </div>
+                <!-- Reason 4 -->
+                <div class="reason-card fade-up">
+                    <div class="reason-card__number">04</div>
+                    <h3 class="reason-card__title">完全個室の癒し空間</h3>
+                    <p class="reason-card__text">
+                        白を基調とした清潔感のある1席だけの完全プライベート空間で、ふかふかのリクライニングソファに身をゆだねながら至福の時間をお過ごしください。
+                    </p>
+                </div>
+                <!-- Reason 5 -->
+                <div class="reason-card fade-up delay-1">
+                    <div class="reason-card__number">05</div>
+                    <h3 class="reason-card__title">豊富なアイケアメニュー</h3>
+                    <p class="reason-card__text">
+                        まつげエクステだけでなく、美しい目元を育てるためのまつげシャンプーや高濃度トリートメント、美眉スタイリングなど、トータルケアをご用意しています。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu Section -->
+    <section id="menu" class="section menu">
+        <div class="container menu__inner">
+            <div class="section-header text-center fade-up">
+                <span class="section-subtitle">Menu & Price</span>
+                <h2 class="section-title">メニュー・料金</h2>
+                <p class="section-desc">当サロンはまつげへの負担を考慮し、つけ放題は行っておりません。</p>
+            </div>
+            
+            <div class="menu__wrapper fade-up delay-1">
+                <div class="menu__category">
+                    <h3 class="menu__category-title">Eyelash Extension</h3>
+                    <p class="menu__category-desc">最高級セーブル使用 / 低刺激国産グルー</p>
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <div class="menu__item-info">
+                                <h4 class="menu__item-name">ナチュラル (80本〜100本)</h4>
+                                <p class="menu__item-desc">初めての方や、オフィスで自然に見せたい方に。</p>
+                            </div>
+                            <div class="menu__item-price">¥8,800</div>
+                        </li>
+                        <li class="menu__item">
+                            <div class="menu__item-info">
+                                <h4 class="menu__item-name">エレガント (120本〜140本)</h4>
+                                <p class="menu__item-desc">適度なボリューム感で、マスカラを塗ったような華やかな目元に。</p>
+                            </div>
+                            <div class="menu__item-price">¥11,000</div>
+                        </li>
+                        <li class="menu__item">
+                            <div class="menu__item-info">
+                                <h4 class="menu__item-name">グラマラス (160本〜)</h4>
+                                <p class="menu__item-desc">しっかりとした存在感がありながら、上品さを失わないデザイン。</p>
+                            </div>
+                            <div class="menu__item-price">¥13,200</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu__category mt-lg">
+                    <h3 class="menu__category-title">Eye Care & Eyebrow</h3>
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <div class="menu__item-info">
+                                <h4 class="menu__item-name">高濃度まつげトリートメント</h4>
+                                <p class="menu__item-desc">傷んだまつげを内側から補修し、ハリ・コシを与えます。</p>
+                            </div>
+                            <div class="menu__item-price">¥3,300</div>
+                        </li>
+                        <li class="menu__item">
+                            <div class="menu__item-info">
+                                <h4 class="menu__item-name">アイブロウスタイリング</h4>
+                                <p class="menu__item-desc">骨格に合わせたワックス脱毛＆オリジナル眉カット。</p>
+                            </div>
+                            <div class="menu__item-price">¥6,600</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container-fluid">
+            <div class="section-header text-center fade-up">
+                <span class="section-subtitle">Gallery</span>
+                <h2 class="section-title">ギャラリー</h2>
+            </div>
+            <div class="gallery__grid fade-up delay-1">
+                <div class="gallery__item">
+                    <img src="./images/gallery_eyelash.png" alt="ギャラリー画像 1" class="gallery__img">
+                </div>
+                <div class="gallery__item">
+                    <img src="./images/gallery_eyelash.png" alt="ギャラリー画像 2" class="gallery__img" style="filter: brightness(1.1) contrast(0.95);">
+                </div>
+                <div class="gallery__item">
+                    <img src="./images/hero_eyelash.png" alt="ギャラリー画像 3" class="gallery__img">
+                </div>
+            </div>
+            <div class="text-center mt-md fade-up delay-2">
+                 <a href="https://www.instagram.com/" target="_blank" class="btn btn--outline">Instagramでさらに見る</a>
+            </div>
+        </div>
+    </section>
+    <!-- Access & Footer -->
+    <footer id="access" class="footer">
+        <div class="container footer__inner">
+            <div class="footer__info fade-up">
+                <h2 class="logo footer__logo">
+                    <span class="logo__en">Eclat Gracieux</span>
+                </h2>
+                <div class="footer__contact">
+                    <p class="address">
+                        〒107-0061<br>
+                        東京都港区北青山3-X-X エクラビル 3F<br>
+                        東京メトロ「表参道駅」B2出口 徒歩1分
+                    </p>
+                    <p class="hours">
+                        営業時間：11:00 〜 20:00<br>
+                        定休日：毎週火曜日
+                    </p>
+                    <a href="#reservation" class="btn btn--primary mt-sm">LINEでご予約</a>
+                </div>
+            </div>
+            <div class="footer__nav fade-up delay-1">
+                <ul class="footer__links">
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#reasons">Reasons</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+                <div class="social-links mt-sm">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">LINE</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Eclat Gracieux. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 0. Dark Mode / Light Mode Toggle
+            const themeToggles = document.querySelectorAll('.js-theme-toggle');
+            
+            // Check saved theme or system preference
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            themeToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    if (newTheme === 'dark') {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.documentElement.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            });
+            // 1. Scroll Animations (Intersection Observer)
+            const fadeElements = document.querySelectorAll('.fade-up');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Trigger animations for elements already in viewport on load
+            setTimeout(() => {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add('is-visible');
+                        observer.unobserve(el);
+                    }
+                });
+            }, 100);
+            // 2. Header Scroll Effect
+            const header = document.querySelector('.js-header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('is-scrolled');
+                } else {
+                    header.classList.remove('is-scrolled');
+                }
+            }, { passive: true });
+            
+            if (window.scrollY > 50) {
+                header.classList.add('is-scrolled');
+            }
+            // 3. Mobile Navigation Toggle
+            const navToggle = document.querySelector('.js-nav-toggle');
+            const mobileMenu = document.querySelector('.js-mobile-menu');
+            const mobileLinks = document.querySelectorAll('.js-mobile-link');
+            
+            if (navToggle && mobileMenu) {
+                navToggle.addEventListener('click', () => {
+                    navToggle.classList.toggle('is-active');
+                    mobileMenu.classList.toggle('is-active');
+                    document.body.style.overflow = mobileMenu.classList.contains('is-active') ? 'hidden' : '';
+                });
+                
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navToggle.classList.remove('is-active');
+                        mobileMenu.classList.remove('is-active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
