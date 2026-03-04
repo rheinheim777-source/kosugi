@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="恵比寿駅徒歩1分。大人の女性のための上質なアイラッシュサロン。自然で上品な仕上がり、自まつ毛を傷めない技術で、あなただけの美しさを引き出します。">
+    <meta name="keywords" content="マツエク, 恵比寿, アイラッシュサロン, まつ毛エクステ, アンドヘルシー, パリジェンヌ, ダメージレス, Eclat Gracieux">
+
+    <meta property="og:title" content="Eclat Gracieux | 恵比寿のプレミアム・アイラッシュサロン">
+    <meta property="og:description" content="恵比寿駅徒歩1分の完全プライベート・アイラッシュサロン。大人の女性に向けたダメージレス施術。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xs509999.xsrv.jp/portfolio/">
+    <meta property="og:site_name" content="Eclat Gracieux">
+    <meta property="og:image" content="./images/hero_eyelash.png">
+
+    <title>Eclat Gracieux | 恵比寿のプレミアム・アイラッシュサロン</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables */
+        :root {
+            --color-bg: #FDFBF7;
+            --color-text-main: #333333;
+            --color-text-light: #666666;
+            --color-accent: #D4AF37;
+            --color-accent-light: #F4E8C1;
+            --color-surface: #FFFFFF;
+            --color-rose: #DDA7A5;
+            --color-border: rgba(0, 0, 0, 0.1);
+            --header-bg: rgba(253, 251, 247, 0.95);
+            --hero-bg: rgba(253, 251, 247, 0.85);
+            --font-ja: 'Shippori Mincho', serif;
+            --font-en: 'Playfair Display', serif;
+            --trans-default: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #121212;
+            --color-text-main: #E0E0E0;
+            --color-text-light: #A0A0A0;
+            --color-accent: #E5C365;
+            --color-accent-light: #5A4A1C;
+            --color-surface: #1E1E1E;
+            --color-border: rgba(255, 255, 255, 0.1);
+            --header-bg: rgba(18, 18, 18, 0.95);
+            --hero-bg: rgba(18, 18, 18, 0.85);
+        }
+
+        /* Base */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--font-ja); color: var(--color-text-main); background-color: var(--color-bg); line-height: 1.8; letter-spacing: 0.05em; transition: background-color var(--trans-default), color var(--trans-default); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+        .section { padding: 6rem 0; }
+        .text-center { text-align: center; }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* Typography */
+        .section-subtitle { display: block; font-family: var(--font-en); font-size: 1rem; color: var(--color-accent); margin-bottom: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .section-title { font-size: 2rem; font-weight: 500; margin-bottom: 3rem; }
+
+        /* Header */
+        .header { position: fixed; top: 0; width: 100%; z-index: 100; transition: var(--trans-default); padding: 1.5rem 0; }
+        .header.is-scrolled { background: var(--header-bg); padding: 1rem 0; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
+        .header__inner { display: flex; justify-content: space-between; align-items: center; padding: 0 5%; }
+        .logo__en { font-family: var(--font-en); font-size: 1.5rem; font-weight: 600; }
+        .nav__list { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-en { font-family: var(--font-en); font-size: 0.9rem; display: block; text-align: center; }
+        .nav-ja { font-size: 0.6rem; color: var(--color-text-light); display: block; text-align: center; }
+
+        /* Hero */
+        .hero { height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-left: 10%; }
+        .hero__bg { position: absolute; top: 0; right: 0; width: 65%; height: 100%; z-index: -1; }
+        .hero__image { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95); }
+        [data-theme="dark"] .hero__image { filter: brightness(0.6); }
+        .hero__content { max-width: 550px; background: var(--hero-bg); padding: 3rem; backdrop-filter: blur(10px); border-left: 3px solid var(--color-accent); }
+        .hero__title-en { font-family: var(--font-en); font-size: 3.5rem; color: var(--color-accent); line-height: 1.1; display: block; }
+        .btn { display: inline-block; padding: 1rem 3rem; background: var(--color-text-main); color: var(--color-bg); margin-top: 2rem; transition: 0.3s; }
+        .btn:hover { background: var(--color-accent); color: #121212; }
+
+        /* VOC Section */
+        .voc { background-color: var(--color-surface); }
+        .voc__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .voc-card { background: var(--color-bg); padding: 2rem; border-radius: 4px; border: 1px solid var(--color-border); display: flex; flex-direction: column; }
+        .voc-card__header { display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+        .voc-card__name { font-weight: 600; font-size: 0.85rem; }
+        .voc-card__rating { color: var(--color-accent); font-size: 0.8rem; }
+        .voc-card__text { font-size: 0.85rem; line-height: 1.8; flex-grow: 1; }
+        .voc-card__footer { margin-top: 1rem; font-size: 0.75rem; color: var(--color-text-light); }
+        .voc-card__tag { display: inline-block; margin-top: 0.5rem; padding: 2px 8px; background: var(--color-accent-light); color: #5A4A1C; border-radius: 2px; font-size: 0.7rem; }
+
+        /* Gallery */
+        .gallery__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+        .gallery__item { aspect-ratio: 1/1; overflow: hidden; }
+        .gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery__item:hover img { transform: scale(1.05); }
+
+        /* Access Table */
+        .access-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        .access-table th, .access-table td { padding: 1.2rem; border-bottom: 1px solid var(--color-border); text-align: left; }
+        .access-table th { color: var(--color-accent); width: 30%; }
+
+        /* Theme Toggle */
+        .theme-toggle { background: none; border: none; cursor: pointer; color: var(--color-text-main); }
+        .icon-sun { display: none; }
+        [data-theme="dark"] .icon-sun { display: block; }
+        [data-theme="dark"] .icon-moon { display: none; }
+
+        /* Footer */
+        .footer { background: #1a1a1a; color: #fff; padding: 4rem 0 2rem; }
+        .footer__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+        .footer__contact p { font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.5rem; }
+        .footer__bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; font-size: 0.7rem; opacity: 0.5; }
+
+        @media (max-width: 768px) {
+            .hero { padding-left: 5%; }
+            .hero__title-en { font-size: 2.5rem; }
+            .nav { display: none; }
+            .footer__inner { flex-direction: column; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header js-header">
+        <div class="header__inner">
+            <h1 class="logo">
+                <a href="#">
+                    <span class="logo__en">Eclat Gracieux</span>
+                </a>
+            </h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#concept"><span class="nav-en">Concept</span><span class="nav-ja">コンセプト</span></a></li>
+                    <li><a href="#menu"><span class="nav-en">Menu</span><span class="nav-ja">メニュー</span></a></li>
+                    <li><a href="#gallery"><span class="nav-en">Gallery</span><span class="nav-ja">ギャラリー</span></a></li>
+                    <li><a href="#reviews"><span class="nav-en">Voice</span><span class="nav-ja">お客様の声</span></a></li>
+                    <li><a href="#access"><span class="nav-en">Access</span><span class="nav-ja">アクセス</span></a></li>
+                    <li>
+                        <button class="theme-toggle js-theme-toggle" aria-label="テーマ切替">
+                            <svg class="icon-moon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                            <svg class="icon-sun" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 17a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM5.64 7.05a1 1 0 0 0 .7.29 1 1 0 0 0 .71-.29 1 1 0 0 0 0-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM18.36 16.95a1 1 0 0 0-.7-.29 1 1 0 0 0-.71.29 1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41-1.41zM3 12a1 1 0 0 0 1-1h2a1 1 0 0 0 0-2H4a1 1 0 0 0-1 1zm17-1h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1zm-1.64-3.95a1 1 0 0 0 1.41-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM5.64 16.95l-1.42 1.42a1 1 0 0 0 1.41 1.41l1.42-1.42a1 1 0 0 0-1.41-1.41z"/></svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero__bg">
+            <img src="./images/hero_eyelash.png" alt="Main Visual" class="hero__image">
+        </div>
+        <div class="hero__content fade-up">
+            <span class="hero__title-en">Natural & Elegant</span>
+            <h2 style="font-size: 1.2rem; margin: 1rem 0;">恵比寿駅1分。洗練された大人の目元へ。</h2>
+            <p style="font-size: 0.9rem; color: var(--color-text-light);">忙しい日常に、効率的かつ上質な癒しを。<br>完全個室のプライベート空間で叶える、理想の仕上がり。</p>
+            <a href="#access" class="btn">ご予約はこちら</a>
+        </div>
+    </section>
+
+    <section id="reviews" class="section voc">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <span class="section-subtitle">Customer Voices</span>
+                <h2 class="section-title">お客様の声</h2>
+            </div>
+            <div class="voc__grid">
+                <div class="voc-card fade-up">
+                    <div class="voc-card__header">
+                        <span class="voc-card__name">ゆか様 (40代)</span>
+                        <span class="voc-card__rating">★★★★★ 5.0</span>
+                    </div>
+                    <p class="voc-card__text">コスパ、タイパよく満足◎ 駅近で便利。施術前の案内が資料を使いながらで非常にわかりやすく、不安に寄り添ってくれるホスピタリティを感じました。会計後の身だしなみを整える場所もありがたいです。</p>
+                    <div class="voc-card__footer">
+                        <span class="voc-card__tag">タイパ・ホスピタリティ</span>
+                    </div>
+                </div>
+                <div class="voc-card fade-up">
+                    <div class="voc-card__header">
+                        <span class="voc-card__name">misa様 (30代/会社員)</span>
+                        <span class="voc-card__rating">★★★★★ 5.0</span>
+                    </div>
+                    <p class="voc-card__text">丁寧なカウンセリングでアンドヘルシーをして頂きました。とてもぱっちり上がって理想通りの仕上がりに♪ モチも良く、日にちが経ってもばらつきがないです！ブライダルをお任せして本当に良かったです。</p>
+                    <div class="voc-card__footer">
+                        <span class="voc-card__tag">&healthy / 持続力</span>
+                    </div>
+                </div>
+                <div class="voc-card fade-up">
+                    <div class="voc-card__header">
+                        <span class="voc-card__name">さら様 (20代前半)</span>
+                        <span class="voc-card__rating">★★★★★ 5.0</span>
+                    </div>
+                    <p class="voc-card__text">初めてのマツエクでしたが、なりたいイメージを丁寧に聞き取ってくださいました。理想以上の仕上がりで大満足です！帰りにメイクや髪を整えられるのも嬉しいポイントです。</p>
+                    <div class="voc-card__footer">
+                        <span class="voc-card__tag">初マツエク / 設備充実</span>
+                    </div>
+                </div>
+                <div class="voc-card fade-up">
+                    <div class="voc-card__header">
+                        <span class="voc-card__name">wa様 (20代後半/主婦)</span>
+                        <span class="voc-card__rating">★★★★★ 5.0</span>
+                    </div>
+                    <p class="voc-card__text">とても丁寧にカウンセリングをしてくださり、仕上がりイメージなども教えてくださりましたので大変助かりました！次回もお願いします。</p>
+                    <div class="voc-card__footer">
+                        <span class="voc-card__tag">カウンセリング重視</span>
+                    </div>
+                </div>
+                <div class="voc-card fade-up">
+                    <div class="voc-card__header">
+                        <span class="voc-card__name">香様 (20代後半/会社員)</span>
+                        <span class="voc-card__rating">★★★★☆ 4.0</span>
+                    </div>
+                    <p class="voc-card__text">仕上がりがナチュラルなのに、パッチリ可愛くなるのでとても良かったです！LEDエクステとの組み合わせも満足です。</p>
+                    <div class="voc-card__footer">
+                        <span class="voc-card__tag">ナチュラル / LEDエクステ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <span class="section-subtitle">Gallery</span>
+                <h2 class="section-title">仕上がりイメージ</h2>
+            </div>
+            <div class="gallery__grid fade-up">
+                <div class="gallery__item"><img src="./images/gallery1.jpg" alt="Gallery 1"></div>
+                <div class="gallery__item"><img src="./images/gallery2.jpg" alt="Gallery 2"></div>
+                <div class="gallery__item"><img src="./images/gallery3.jpg" alt="Gallery 3"></div>
+                <div class="gallery__item"><img src="./images/gallery4.jpg" alt="Gallery 4"></div>
+                <div class="gallery__item"><img src="./images/gallery5.jpg" alt="Gallery 5"></div>
+                <div class="gallery__item"><img src="./images/gallery6.jpg" alt="Gallery 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="section access">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <span class="section-subtitle">Access</span>
+                <h2 class="section-title">アクセス・店舗情報</h2>
+            </div>
+            <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
+                <div style="aspect-ratio: 16/9; background: #eee; margin-bottom: 2rem;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.023847246473!2d139.7052951!3d35.6468498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b405f6396f9%3A0xc62227d82586e24b!2z44CSMTUwLTAwMjEg6Y2 東京都渋谷区恵比寿西１丁目７−１１ 鈴木ビル!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <table class="access-table">
+                    <tr>
+                        <th>店舗名</th>
+                        <td>Eclat Gracieux (エクラ・グラシュー)</td>
+                    </tr>
+                    <tr>
+                        <th>住所</th>
+                        <td>〒150-0021<br>東京都渋谷区恵比寿西1-7-11 鈴木ビル 2F</td>
+                    </tr>
+                    <tr>
+                        <th>アクセス</th>
+                        <td>JR恵比寿駅西口より徒歩1分<br>日比谷線恵比寿駅2番出口より徒歩30秒</td>
+                    </tr>
+                    <tr>
+                        <th>営業時間</th>
+                        <td>11:00 〜 20:00 (最終受付19:00)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__info">
+                <h2 class="logo__en" style="margin-bottom: 1.5rem;">Eclat Gracieux</h2>
+                <div class="footer__contact">
+                    <p>〒150-0021 東京都渋谷区恵比寿西1-7-11 鈴木ビル 2F</p>
+                    <p>JR恵比寿駅 徒歩1分 / 日比谷線 徒歩30秒</p>
+                    <p>営業時間：11:00 〜 20:00</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 3rem;">
+                <ul style="list-style: none; font-size: 0.8rem; line-height: 2;">
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+                <ul style="list-style: none; font-size: 0.8rem; line-height: 2;">
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="#">LINE Reservation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Eclat Gracieux. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('is-visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Header Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.js-header');
+            header.classList.toggle('is-scrolled', window.scrollY > 50);
+        });
+
+        // Theme Toggle
+        const toggle = document.querySelector('.js-theme-toggle');
+        toggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>
