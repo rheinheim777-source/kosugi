@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="恵比寿駅徒歩1分。大人の女性のための上質なアイラッシュサロン。自然で上品な仕上がり、自まつ毛を傷めない技術で、あなただけの美しさを引き出します。">
-    <meta name="keywords" content="マツエク, 恵比寿, アイラッシュサロン, まつ毛エクステ, アンドヘルシー, パリジェンヌ, ダメージレス, Eclat Gracieux">
+    <meta name="description" content="恵比寿駅徒歩1分。Sonia eyelash salon（ソニア）。大人の女性のための上質なアイラッシュサロン。自然で上品な仕上がり、自まつ毛を傷めない技術で、あなただけの美しさを引き出します。">
+    <meta name="keywords" content="マツエク, 恵比寿, アイラッシュサロン, Sonia, ソニア, まつ毛エクステ, アンドヘルシー, パリジェンヌ, ダメージレス">
 
-    <title>Eclat Gracieux | 恵比寿のプレミアム・アイラッシュサロン</title>
+    <title>Sonia eyelash salon | 恵比寿のプレミアム・アイラッシュサロン</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* Variables */
@@ -19,14 +19,14 @@
             --color-bg: #FDFBF7;
             --color-text-main: #333333;
             --color-text-light: #666666;
-            --color-accent: #D4AF37;
+            --color-accent: #C5A059; /* 上品なゴールド */
             --color-accent-light: #F4E8C1;
             --color-surface: #FFFFFF;
-            --color-border: rgba(0, 0, 0, 0.1);
+            --color-border: rgba(0, 0, 0, 0.08);
             --header-bg: rgba(253, 251, 247, 0.95);
             --font-ja: 'Shippori Mincho', serif;
             --font-en: 'Playfair Display', serif;
-            --trans-default: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --trans-default: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         [data-theme="dark"] {
@@ -34,7 +34,6 @@
             --color-text-main: #E0E0E0;
             --color-text-light: #A0A0A0;
             --color-accent: #E5C365;
-            --color-accent-light: #4A3F1A;
             --color-surface: #1E1E1E;
             --color-border: rgba(255, 255, 255, 0.1);
             --header-bg: rgba(18, 18, 18, 0.95);
@@ -49,77 +48,81 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
         .section { padding: 8rem 0; }
         .text-center { text-align: center; }
-        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 1s ease, transform 1s ease; }
         .fade-up.is-visible { opacity: 1; transform: translateY(0); }
 
         /* Typography */
-        .section-subtitle { display: block; font-family: var(--font-en); font-size: 1rem; color: var(--color-accent); margin-bottom: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; font-style: italic; }
-        .section-title { font-size: 1.75rem; font-weight: 500; margin-bottom: 4rem; position: relative; padding-bottom: 1rem; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 1px; background: var(--color-accent); }
+        .section-subtitle { display: block; font-family: var(--font-en); font-size: 0.9rem; color: var(--color-accent); margin-bottom: 0.5rem; letter-spacing: 0.3em; text-transform: uppercase; font-style: italic; }
+        .section-title { font-size: 1.8rem; font-weight: 500; margin-bottom: 4rem; position: relative; padding-bottom: 1.2rem; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 30px; height: 1px; background: var(--color-accent); }
 
         /* Header */
         .header { position: fixed; top: 0; width: 100%; z-index: 100; transition: var(--trans-default); padding: 1.5rem 0; }
-        .header.is-scrolled { background: var(--header-bg); padding: 0.8rem 0; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
+        .header.is-scrolled { background: var(--header-bg); padding: 0.8rem 0; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03); }
         .header__inner { display: flex; justify-content: space-between; align-items: center; padding: 0 5%; }
-        .logo__en { font-family: var(--font-en); font-size: 1.4rem; font-weight: 600; letter-spacing: 0.1em; }
+        .logo__en { font-family: var(--font-en); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.05em; }
         .nav__list { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-        .nav-en { font-family: var(--font-en); font-size: 0.85rem; display: block; text-align: center; }
+        .nav-en { font-family: var(--font-en); font-size: 0.8rem; display: block; text-align: center; }
         .nav-ja { font-size: 0.6rem; color: var(--color-text-light); display: block; text-align: center; }
 
         /* Hero */
         .hero { height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-left: 8%; }
         .hero__bg { position: absolute; top: 0; right: 0; width: 65%; height: 100%; z-index: -1; }
         .hero__image { width: 100%; height: 100%; object-fit: cover; }
-        [data-theme="dark"] .hero__image { filter: brightness(0.7); }
-        .hero__content { max-width: 500px; background: var(--header-bg); padding: 3.5rem; backdrop-filter: blur(10px); border-left: 2px solid var(--color-accent); box-shadow: 20px 20px 60px rgba(0,0,0,0.03); }
-        .hero__title-en { font-family: var(--font-en); font-size: 3rem; color: var(--color-accent); line-height: 1.2; display: block; margin-bottom: 1rem; }
-        .btn { display: inline-block; padding: 1rem 3rem; background: var(--color-text-main); color: var(--color-bg); margin-top: 2rem; transition: 0.3s; font-size: 0.9rem; }
-        .btn:hover { background: var(--color-accent); color: #fff; transform: translateY(-2px); }
+        [data-theme="dark"] .hero__image { filter: brightness(0.6); }
+        .hero__content { max-width: 520px; background: var(--header-bg); padding: 4rem; backdrop-filter: blur(12px); border-left: 1px solid var(--color-accent); }
+        .hero__title-en { font-family: var(--font-en); font-size: 3.2rem; color: var(--color-accent); line-height: 1.1; display: block; margin-bottom: 1.5rem; }
+        .btn { display: inline-block; padding: 1.2rem 3.5rem; background: var(--color-text-main); color: var(--color-bg); margin-top: 2rem; transition: 0.3s; font-size: 0.85rem; letter-spacing: 0.2em; }
+        .btn:hover { background: var(--color-accent); color: #fff; transform: translateY(-3px); }
 
         /* Concept */
-        .concept__text-box { max-width: 700px; margin: 0 auto; line-height: 2.2; }
-        .concept__lead { font-size: 1.2rem; color: var(--color-accent); margin-bottom: 2rem; }
+        .concept__text-box { max-width: 750px; margin: 0 auto; line-height: 2.4; }
+        .concept__lead { font-size: 1.3rem; color: var(--color-accent); margin-bottom: 2.5rem; font-weight: 500; }
 
         /* Menu */
-        .menu__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-        .menu__category h3 { font-size: 1.1rem; border-bottom: 1px solid var(--color-accent); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
-        .menu__item { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.9rem; border-bottom: 1px dotted var(--color-border); padding-bottom: 0.5rem; }
-        .menu__price { font-family: var(--font-en); font-weight: 600; }
-
-        /* VOC */
-        .voc { background-color: var(--color-surface); }
-        .voc__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .voc-card { background: var(--color-bg); padding: 2rem; border-radius: 2px; border: 1px solid var(--color-border); font-size: 0.85rem; }
-        .voc-card__header { display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; }
-        .voc-card__rating { color: var(--color-accent); }
-        .voc-card__tag { display: inline-block; margin-top: 1rem; padding: 2px 8px; background: var(--color-accent-light); color: #5A4A1C; font-size: 0.7rem; }
+        .menu { background-color: var(--color-surface); }
+        .menu__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+        .menu__category h3 { font-size: 1.1rem; border-bottom: 1px solid var(--color-accent); padding-bottom: 0.8rem; margin-bottom: 2rem; font-family: var(--font-en); letter-spacing: 0.1em; }
+        .menu__item { display: flex; justify-content: space-between; margin-bottom: 1.2rem; font-size: 0.9rem; border-bottom: 1px dotted var(--color-border); padding-bottom: 0.6rem; }
+        .menu__price { font-family: var(--font-en); font-weight: 600; color: var(--color-accent); }
 
         /* Gallery */
         .gallery__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .gallery__item { aspect-ratio: 1/1; overflow: hidden; background: #eee; }
-        .gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .gallery__item { aspect-ratio: 1/1; overflow: hidden; background: #eee; position: relative; }
+        .gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
         .gallery__item:hover img { transform: scale(1.1); }
 
-        /* Access */
-        .access-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
-        .access-table th, .access-table td { padding: 1.2rem; border-bottom: 1px solid var(--color-border); text-align: left; font-size: 0.9rem; }
-        .access-table th { color: var(--color-accent); width: 25%; font-weight: 500; }
+        /* VOC */
+        .voc { background-color: var(--color-surface); }
+        .voc__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .voc-card { background: var(--color-bg); padding: 2.5rem; border: 1px solid var(--color-border); font-size: 0.85rem; }
+        .voc-card__header { display: flex; justify-content: space-between; margin-bottom: 1.2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.8rem; }
+        .voc-card__rating { color: var(--color-accent); letter-spacing: 2px; }
+        .voc-card__text { margin-bottom: 1.5rem; text-align: justify; }
+        .voc-card__tag { display: inline-block; padding: 3px 10px; background: var(--color-accent-light); color: #5A4A1C; font-size: 0.7rem; border-radius: 2px; }
 
-        /* Toggle */
-        .theme-toggle { background: none; border: none; cursor: pointer; color: var(--color-text-main); margin-left: 1rem; }
+        /* Access */
+        .access-table { width: 100%; border-collapse: collapse; margin-top: 3rem; }
+        .access-table th, .access-table td { padding: 1.5rem; border-bottom: 1px solid var(--color-border); text-align: left; font-size: 0.9rem; }
+        .access-table th { color: var(--color-accent); width: 25%; font-weight: 600; }
+
+        /* Theme Toggle */
+        .theme-toggle { background: none; border: none; cursor: pointer; color: var(--color-text-main); margin-left: 1.5rem; }
         .icon-sun { display: none; }
         [data-theme="dark"] .icon-sun { display: block; }
         [data-theme="dark"] .icon-moon { display: none; }
 
         /* Footer */
-        .footer { background: #1a1a1a; color: rgba(255,255,255,0.8); padding: 5rem 0 2rem; font-size: 0.8rem; }
-        .footer__inner { display: flex; justify-content: space-between; margin-bottom: 3rem; }
-        .footer__bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+        .footer { background: #111; color: rgba(255,255,255,0.7); padding: 6rem 0 3rem; font-size: 0.8rem; }
+        .footer__inner { display: flex; justify-content: space-between; margin-bottom: 4rem; gap: 3rem; flex-wrap: wrap; }
+        .footer__logo { font-family: var(--font-en); font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; display: block; }
+        .footer__bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2.5rem; color: rgba(255,255,255,0.3); }
 
         @media (max-width: 768px) {
-            .hero { padding-left: 5%; }
-            .hero__content { padding: 2rem; }
-            .menu__grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero { padding-left: 5%; padding-right: 5%; }
+            .hero__content { padding: 2.5rem; }
+            .hero__title-en { font-size: 2.4rem; }
+            .menu__grid { grid-template-columns: 1fr; gap: 3rem; }
             .gallery__grid { grid-template-columns: repeat(2, 1fr); }
             .nav { display: none; }
         }
@@ -129,7 +132,7 @@
 <body>
     <header class="header js-header">
         <div class="header__inner">
-            <h1 class="logo"><a href="#" class="logo__en">Eclat Gracieux</a></h1>
+            <h1 class="logo"><a href="#" class="logo__en">Sonia</a></h1>
             <nav class="nav">
                 <ul class="nav__list">
                     <li><a href="#concept"><span class="nav-en">Concept</span><span class="nav-ja">コンセプト</span></a></li>
@@ -138,7 +141,7 @@
                     <li><a href="#reviews"><span class="nav-en">Voice</span><span class="nav-ja">お客様の声</span></a></li>
                     <li><a href="#access"><span class="nav-en">Access</span><span class="nav-ja">アクセス</span></a></li>
                     <li>
-                        <button class="theme-toggle js-theme-toggle">
+                        <button class="theme-toggle js-theme-toggle" aria-label="テーマ切替">
                             <svg class="icon-moon" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
                             <svg class="icon-sun" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 17a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM5.64 7.05a1 1 0 0 0 .7.29 1 1 0 0 0 .71-.29 1 1 0 0 0 0-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM18.36 16.95a1 1 0 0 0-.7-.29 1 1 0 0 0-.71.29 1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41-1.41zM3 12a1 1 0 0 0 1-1h2a1 1 0 0 0 0-2H4a1 1 0 0 0-1 1zm17-1h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1zm-1.64-3.95a1 1 0 0 0 1.41-1.41l-1.42-1.42a1 1 0 0 0-1.41 1.41zM5.64 16.95l-1.42 1.42a1 1 0 0 0 1.41 1.41l1.42-1.42a1 1 0 0 0-1.41-1.41z"/></svg>
                         </button>
@@ -148,167 +151,204 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero__bg">
-            <img src="./images/hero_eyelash.png" alt="Hero Image" class="hero__image">
-        </div>
-        <div class="hero__content fade-up">
-            <span class="hero__title-en">Elegance in<br>the Details.</span>
-            <p>恵比寿駅1分。完全プライベート空間で叶える、<br>自まつ毛を大切にする大人のための施術。</p>
-            <a href="#access" class="btn">RESERVATION</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero__bg">
+                <img src="./images/hero_eyelash.png" alt="Sonia Eyelash Salon" class="hero__image">
+            </div>
+            <div class="hero__content fade-up">
+                <span class="hero__title-en">Modern<br>Elegance.</span>
+                <p style="font-weight: 500; margin-bottom: 1rem;">恵比寿駅1分。自分らしく、美しく。</p>
+                <p style="font-size: 0.85rem; color: var(--color-text-light); line-height: 2;">
+                    「自まつ毛を育てる」ダメージレスな施術。<br>忙しいあなたの日常を彩る、洗練された目元へ。
+                </p>
+                <a href="#access" class="btn">RESERVE</a>
+            </div>
+        </section>
 
-    <section id="concept" class="section">
-        <div class="container text-center">
-            <div class="section-header fade-up">
-                <span class="section-subtitle">Concept</span>
-                <h2 class="section-title">引き算で創る、本来の美しさ</h2>
-            </div>
-            <div class="concept__text-box fade-up">
-                <p class="concept__lead">「やりすぎない、けれど、物足りなくない」</p>
-                <p>Eclat Gracieuxが大切にしているのは、お客様自身の美しさを最大限に活かすデザインです。<br>
-                派手に飾るのではなく、一人ひとりの骨格やまつ毛の状態に合わせた精密な技術を提供します。<br><br>
-                「コスパ・タイパ」という現代的な合理性と、<br>一対一で向き合う「深いホスピタリティ」。<br>
-                その矛盾する二つを高い次元で両立させることが、私たちの誇りです。</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="menu" class="section" style="background-color: var(--color-surface);">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="section-subtitle">Menu</span>
-                <h2 class="section-title">施術メニュー</h2>
-            </div>
-            <div class="menu__grid fade-up">
-                <div class="menu__category">
-                    <h3>Eyelash Extension</h3>
-                    <div class="menu__item"><span>フラットラッシュ 100本</span><span class="menu__price">¥5,500</span></div>
-                    <div class="menu__item"><span>フラットラッシュ 140本</span><span class="menu__price">¥6,000</span></div>
-                    <div class="menu__item"><span>LEDエクステ オプション</span><span class="menu__price">+¥2,000</span></div>
-                    <div class="menu__item"><span>&healthy (マツエク×パーマ)</span><span class="menu__price">+¥3,500</span></div>
+        <section id="concept" class="section">
+            <div class="container text-center">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle">Concept</span>
+                    <h2 class="section-title">Soniaのこだわり</h2>
                 </div>
-                <div class="menu__category">
-                    <h3>Lash Lift & Others</h3>
-                    <div class="menu__item"><span>パリジェンヌラッシュリフト</span><span class="menu__price">¥6,300</span></div>
-                    <div class="menu__item"><span>次世代まつげパーマ</span><span class="menu__price">¥5,800</span></div>
-                    <div class="menu__item"><span>アイブロウスタイリング</span><span class="menu__price">¥4,500</span></div>
-                    <div class="menu__item"><span>オフのみ (他店)</span><span class="menu__price">¥2,200</span></div>
+                <div class="concept__text-box fade-up">
+                    <p class="concept__lead">自己矛盾を美しさに変える、<br>大人のための隠れ家サロン。</p>
+                    <p>
+                        私たちは、現代を生きる女性の「わがまま」に応えます。<br>
+                        「時間をかけずに、最高の結果を（タイパ・コスパ）」<br>
+                        「プライベート空間で、至福の癒やしを（ホスピタリティ）」<br>
+                        相反する理想を追求し、独自のカウンセリング技術で理想以上の目元をデザイン。<br><br>
+                        自まつ毛の健康を第一に考え、無理な「つけ放題」は行いません。<br>
+                        引き算の美学が生み出す、自然で品格のある仕上がりをご体感ください。
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="gallery" class="section">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="section-subtitle">Gallery</span>
-                <h2 class="section-title">仕上がりイメージ</h2>
-            </div>
-            <div class="gallery__grid fade-up">
-                <div class="gallery__item"><img src="./images/gallery1.jpg" alt="Eyelash 1"></div>
-                <div class="gallery__item"><img src="./images/gallery2.jpg" alt="Eyelash 2"></div>
-                <div class="gallery__item"><img src="./images/gallery3.jpg" alt="Eyelash 3"></div>
-                <div class="gallery__item"><img src="./images/gallery4.jpg" alt="Eyelash 4"></div>
-                <div class="gallery__item"><img src="./images/gallery5.jpg" alt="Eyelash 5"></div>
-                <div class="gallery__item"><img src="./images/gallery6.jpg" alt="Eyelash 6"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="section voc">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="section-subtitle">Customer Voices</span>
-                <h2 class="section-title">お客様の声</h2>
-            </div>
-            <div class="voc__grid fade-up">
-                <div class="voc-card">
-                    <div class="voc-card__header">
-                        <strong>ゆか様 (40代)</strong>
-                        <span class="voc-card__rating">★★★★★</span>
+        <section id="menu" class="section menu">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <span class="section-subtitle">Menu</span>
+                    <h2 class="section-title">メニュー</h2>
+                </div>
+                <div class="menu__grid fade-up">
+                    <div class="menu__category">
+                        <h3>Design & Lift</h3>
+                        <div class="menu__item"><span>パリジェンヌラッシュリフト</span><span class="menu__price">¥6,300</span></div>
+                        <div class="menu__item"><span>&healthy（マツエク×パーマ）</span><span class="menu__price">+¥3,500</span></div>
+                        <div class="menu__item"><span>次世代まつげパーマ</span><span class="menu__price">¥5,800</span></div>
+                        <div class="menu__item"><span>アイブロウスタイリング</span><span class="menu__price">¥4,500</span></div>
                     </div>
-                    <p>コスパ、タイパよく満足◎ 駅近で便利。施術前の案内が資料を示しながらなのでわかりやすい＆安心。ホスピタリティを感じて心地よかったです。</p>
-                    <span class="voc-card__tag">タイパ・ホスピタリティ</span>
-                </div>
-                <div class="voc-card">
-                    <div class="voc-card__header">
-                        <strong>misa様 (30代/会社員)</strong>
-                        <span class="voc-card__rating">★★★★★</span>
+                    <div class="menu__category">
+                        <h3>Extension</h3>
+                        <div class="menu__item"><span>フラットラッシュ 100本</span><span class="menu__price">¥5,500</span></div>
+                        <div class="menu__item"><span>フラットラッシュ 140本</span><span class="menu__price">¥6,000</span></div>
+                        <div class="menu__item"><span>LEDエクステ オプション</span><span class="menu__price">+¥2,000</span></div>
+                        <div class="menu__item"><span>オフのみ（他店）</span><span class="menu__price">¥2,200</span></div>
                     </div>
-                    <p>丁寧なカウンセリングで理想通りの仕上がりになりました♪ モチも良く、日にちが経ってもばらつきもないです！スタッフの皆様の感じも良いです。</p>
-                    <span class="voc-card__tag">&healthy</span>
-                </div>
-                <div class="voc-card">
-                    <div class="voc-card__header">
-                        <strong>さら様 (20代前半)</strong>
-                        <span class="voc-card__rating">★★★★★</span>
-                    </div>
-                    <p>初めてのマツエクでわからないことばかりでしたが、理想以上の目元に仕上がって大満足です！店舗の雰囲気もすごく綺麗でした。</p>
-                    <span class="voc-card__tag">初心者歓迎</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="access" class="section">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="section-subtitle">Access</span>
-                <h2 class="section-title">アクセス</h2>
-            </div>
-            <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
-                <div style="aspect-ratio: 16/9; background: #eee; margin-bottom: 2rem;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3242.046395982737!2d139.704127!3d35.647573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b404d80d195%3A0x6b801a6b0c2a265b!2z44CSMTUwLTAwMjEgr_kuqzpg73muI-os-WMuuaBmuavlOWvvy0xLTctMTE!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <section id="gallery" class="section">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <span class="section-subtitle">Gallery</span>
+                    <h2 class="section-title">仕上がりイメージ</h2>
                 </div>
-                <table class="access-table">
-                    <tr><th>住所</th><td>〒150-0021 東京都渋谷区恵比寿西1-7-11 鈴木ビル 2F</td></tr>
-                    <tr><th>最寄駅</th><td>JR恵比寿駅西口より徒歩1分 / 日比谷線恵比寿駅2番出口より30秒</td></tr>
-                    <tr><th>営業時間</th><td>11:00 〜 20:00</td></tr>
-                </table>
+                <div class="gallery__grid fade-up">
+                    <div class="gallery__item"><img src="./images/gallery1.jpg" alt="Gallery 1"></div>
+                    <div class="gallery__item"><img src="./images/gallery2.jpg" alt="Gallery 2"></div>
+                    <div class="gallery__item"><img src="./images/gallery3.jpg" alt="Gallery 3"></div>
+                    <div class="gallery__item"><img src="./images/gallery4.jpg" alt="Gallery 4"></div>
+                    <div class="gallery__item"><img src="./images/gallery5.jpg" alt="Gallery 5"></div>
+                    <div class="gallery__item"><img src="./images/gallery6.jpg" alt="Gallery 6"></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="reviews" class="section voc">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <span class="section-subtitle">Customer Voices</span>
+                    <h2 class="section-title">お客様の声</h2>
+                </div>
+                <div class="voc__grid fade-up">
+                    <div class="voc-card">
+                        <div class="voc-card__header">
+                            <strong>ゆか様 (40代)</strong>
+                            <span class="voc-card__rating">★★★★★</span>
+                        </div>
+                        <p class="voc-card__text">コスパ、タイパよく満足◎ 駅近で便利◎ お得◎ 施術前の案内が資料示しながらなのでわかりやすい＆安心。ホスピタリティを感じて心地よかったです。会計後、身だしなみを整える場所も提供してくれました。</p>
+                        <span class="voc-card__tag">タイパ・安心感</span>
+                    </div>
+                    <div class="voc-card">
+                        <div class="voc-card__header">
+                            <strong>misa様 (30代/会社員)</strong>
+                            <span class="voc-card__rating">★★★★★</span>
+                        </div>
+                        <p class="voc-card__text">カウンセリングと提案を頂きアンドヘルシーをして頂きました。とてもぱっちり上がって理想通り！モチも良く日にちが経ってもばらつきもないです。ブライダルのまつげをお任せして良かったです。</p>
+                        <span class="voc-card__tag">&healthy / 持続性</span>
+                    </div>
+                    <div class="voc-card">
+                        <div class="voc-card__header">
+                            <strong>さら様 (20代前半)</strong>
+                            <span class="voc-card__rating">★★★★★</span>
+                        </div>
+                        <p class="voc-card__text">初めてのマツエクでわからないことばかりでしたが、丁寧な聞き取りで理想以上の目元に。店舗の雰囲気もすごく綺麗で、帰りにメイク直しができるのもありがたかったです！</p>
+                        <span class="voc-card__tag">初心者おすすめ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="access" class="section">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <span class="section-subtitle">Access</span>
+                    <h2 class="section-title">アクセス</h2>
+                </div>
+                <div class="fade-up" style="max-width: 850px; margin: 0 auto;">
+                    <div style="aspect-ratio: 16/9; background: #eee; margin-bottom: 3rem;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3242.15875704975!2d139.7042!3d35.6475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b3fa73f8e5f%3A0xc6c4262111516086!2z44CSMTUwLTAwMjEg6Z2Z5bO25Yy65oG15q-比566KW77yR5LiB55uu77yX4oiS77yR77yR!5e0!3m2!1sja!2sjp!4v1710000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <table class="access-table">
+                        <tr>
+                            <th>店舗名</th>
+                            <td>Sonia eyelash salon (ソニア)</td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td>〒150-0021<br>東京都渋谷区恵比寿西1-7-11 鈴木ビル 2F</td>
+                        </tr>
+                        <tr>
+                            <th>最寄駅</th>
+                            <td>JR恵比寿駅西口より徒歩1分<br>日比谷線恵比寿駅2番出口より徒歩30秒</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>11:00 〜 20:00 (最終受付19:00)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
                 <div>
-                    <h3 class="logo__en" style="color: #fff; margin-bottom: 1rem;">Eclat Gracieux</h3>
+                    <span class="footer__logo">Sonia</span>
                     <p>〒150-0021 東京都渋谷区恵比寿西1-7-11 鈴木ビル 2F</p>
+                    <p style="margin-top: 0.5rem;">JR恵比寿駅 徒歩1分 / 日比谷線 徒歩30秒</p>
                 </div>
-                <div>
-                    <p>Instagram | LINE Reservation</p>
+                <div style="display: flex; gap: 4rem;">
+                    <ul style="list-style: none; line-height: 2.5;">
+                        <li><a href="#concept">Concept</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                    <ul style="list-style: none; line-height: 2.5;">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LINE Reservation</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2026 Eclat Gracieux</p>
+                <p>© 2026 Sonia eyelash salon. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Intersection Observer
+        // Intersection Observer (Animation)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        // Header Scroll
+        // Header Scroll Effect
+        const header = document.querySelector('.js-header');
         window.addEventListener('scroll', () => {
-            document.querySelector('.js-header').classList.toggle('is-scrolled', window.scrollY > 50);
+            header.classList.toggle('is-scrolled', window.scrollY > 50);
         });
 
         // Theme Toggle
-        const toggle = document.querySelector('.js-theme-toggle');
-        toggle.addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        const themeToggle = document.querySelector('.js-theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
         });
     </script>
 </body>
+
 </html>
